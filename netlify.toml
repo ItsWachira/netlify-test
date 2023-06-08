@@ -1,5 +1,14 @@
 [build]
-  functions = "functions"
-
-[dev]
-  publish = "dist"
+  base = "/"
+  command = "npm run build"
+  publish = "/dist/"
+  [build.environment]
+    NODE_VERSION = "18"
+[functions]
+  external_node_modules = ["express", "netlify-lambda", "serverless-http"]
+  node_bundler = "esbuild"
+[[redirects]]
+  force = true
+  from = "/server/*"
+  status = 200
+  to = "/.netlify/functions/server/:splat"
