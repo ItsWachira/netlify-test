@@ -5,7 +5,7 @@
   [build.environment]
     NODE_VERSION = "18"
 [functions]
-  external_node_modules = ["express", "netlify-lambda", "serverless-http"]
+  external_node_modules = ["express"]
   node_bundler = "esbuild"
 [[redirects]]
   force = true
